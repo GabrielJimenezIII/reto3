@@ -2,7 +2,7 @@ package com.computersusa.demo.entities;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import nonapi.io.github.classgraph.json.Id;
+
 
 import javax.persistence.*;
 

@@ -6,8 +6,6 @@ import com.computersusa.demo.entities.Client;
 import com.computersusa.demo.repository.crud.ClientCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.computersusa.demo.repository.crud.ClientCrudRepository;
-
 
 @Repository
 public class ClientRepository {

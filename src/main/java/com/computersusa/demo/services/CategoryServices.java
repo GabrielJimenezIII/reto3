@@ -1,5 +1,6 @@
 package com.computersusa.demo.services;
 import com.computersusa.demo.entities.Category;
+import com.computersusa.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.Optional;
 @Service
 public class CategoryServices {
     @Autowired
-    private CategoryServices categoryServices;
+    private CategoryRepository categoryServices;
 
     public List<Category> getAll(){return categoryServices.getAll();  }
     public Optional<Category> getCategoryId (Integer id){return categoryServices.getCategoryId(id);  }

@@ -15,7 +15,7 @@ import java.util.Optional;
 public class MessageController {
     @Autowired
     private MessageServices messageServices;
-    @GetMapping("")
+    @GetMapping("/all")
     public List<Message> getMessageAll(){
         return messageServices.getMessageAll();
     }
