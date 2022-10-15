@@ -1,10 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+        table, th, td {
+          border:1px solid red;
+        }
+    body {
+	background-image: url(abstract-blue-red-and-black-gradient-hexagonal-technology-background-free-vector.jpg);
+}
+body,td,th {
+	color: #FFF;
+}
+</style>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Computers</title>
 </head>
+
 <body>
+<h1 align="center"><img src="17927 [Converted].png" width="498" height="189" alt="logo usa"></h1>
+<h1 align="center">Computers</h1>
+
+<div>
+
+  <h1>Category</h1>
+  <p>Name:<!-- <input type="number" id="idCategory" placeholder="Id de Categoria"> -->
+    <input type="text" id="nameCategory" placeholder="Nombre de Categoria">
+    Description:
+    <input  type="text" id="descriptionCategory" placeholder="Descripcion de Categoria">
+    <br>
+  </p>
+  <button onclick="traerInformacionCategory()"> Consult</button>
+    <button onclick="guardarInformacionCategory()"> Insert</button>
+    <div id="resultadoCategory"></div>
+</div>
+
+<div>
+
+    <h1>PCs</h1>
+    <p>Name:
+      <input type="text" id="nameProduct" placeholder="Nombre de Skate">
+      Description: 
+      <input type="text" id="descriptionProduct" placeholder="Product Description">
+      Brand:
+      <input type="text" id="brandProduct" placeholder="Brand">
+    Year: 
+    <input type="number" id="yearProduct" placeholder="Year">
+    <br>
+    </p>
+    <button onclick="traerInformacionSkate()"> Consult</button>
+    <button onclick="guardarInformacionSkate()"> Insert</button>
+</div>
+<div id="resultadoSkate"></div>
+
+
+<div>
+    <h1>Clients</h1>
+
+    <!-- <input type="idClient" id="idClient" placeholder="Id del Cliente"> -->
+    <input type="text" id="email" placeholder="Email del Cliente">
+    <input type="text" id="password" placeholder="Password">
+    <input type="text" id="name" placeholder="Nombre del Cliente">
+    <input type="number" id="age" placeholder="Edad del Cliente">
+    <br>
+    <button onclick="traerInformacionClient()"> Consult</button>
+    <button onclick="guardarInformacionClient()"> Insert</button>
+</div>
+<div id="resultadoClient"></div>
+
+<div>
+    <h1>Messages</h1>
+
+    <input type="text" id="messageText" placeholder="Mensaje">
+    <br>
+    <button onclick="traerInformacionMessage()"> Consult</button>
+    <button onclick="guardarInformacionMessage()"> Insert</button>
+</div>
+<div id="resultadoMessage"></div>
+
+<div>
+    <h1>Reservation</h1>
+
+    <!-- <input type="number" id="idReservation" placeholder="Id de la Reservacion">-->
+    <input type="date" id="startDate" placeholder="Fecha de Inicio">
+    <input type="date" id="devolutionDate" placeholder="Fecha de Devolucion">
+    <br>
+    <button onclick="traerInformacionReservation()"> Consult</button>
+    <button onclick="guardarInformacionReservation()"> Insert</button>
+</div>
+<div id="resultadoReservation"></div>
+
+<div>
+    <h1>Score</h1>
+
+    <input type="text" id="messageText" placeholder="MessageText">
+    <input type="number" id="stars" placeholder="Stars">
+    <br>
+    <button onclick="traerInformacionScore()">Consult</button>
+    <button onclick="guardarInformacionScore()">Insert</button>
+
+</div>
+<div id="resultadoScore"></div>
 
 </body>
+<script type="text/javascript" src="js/misFunciones.js"></script>
 </html>
