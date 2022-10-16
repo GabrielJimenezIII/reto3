@@ -1,9 +1,6 @@
 package com.computersusa.demo.entities;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
