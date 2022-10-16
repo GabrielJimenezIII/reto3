@@ -9,7 +9,11 @@ public class AdminServices {
     @Autowired
     private AdminRepository repository;
 
-    public List<Admin> getAdmins() {
-        return repository.findAll();
-    }
+    public static List<Admin> getAll() {return AdminServices.getAll();}
+
+
+    public Admin saveAdmin(Admin admin) {return AdminServices.save(admin);}
+
+
+
 }
