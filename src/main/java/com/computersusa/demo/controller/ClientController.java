@@ -20,6 +20,7 @@ public class ClientController {
     @GetMapping("/all")
     public List<Client> getAll() {return clientServices.getAll();  }
     @PostMapping("/save")
-    public Client save(@RequestBody Client c) { return clientServices.save(c);
+    public Client save(@RequestBody Client c) {
+        return clientServices.save(c);
     }
 }
