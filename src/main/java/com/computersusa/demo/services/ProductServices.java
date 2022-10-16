@@ -17,59 +17,62 @@ public class ProductServices {
 
     @Autowired
     private ProductRepository productRepository;
-    public List<Product> getAll(){
+
+    public List<Product> getAll() {
         return productRepository.getAll();
     }
-    public Optional<Product> getProductId(int id){
-        return productRepository.getProduct(id);
+
+    public Optional<Product> getProduct(int productId) {
+        return productRepository.getProduct(productId);
     }
-    public Product save(Product p){
-        if (p.getId()==null){
-            return productRepository.save(p);
-        }
-        else {
-            Optional<Product> e= productRepository.getProduct(p.getId());
-            if (e.isPresent()){
-                return p;
+
+    public Product save(Product product) {
+        if (product.getId() == null) {
+            return productRepository.save(product);
+        } else {
+            Optional<Product> e = productRepository.getProduct(product.getId());
+            if (e.isPresent()) {
+                return productRepository.save(product);
+            } else {
+                return product;
             }
-            else {
-                return productRepository.save(p);
-            }
         }
     }
 
-    public Product update(Product p){
-        if(p.getId()!=null){
-            Optional<Product> q = productRepository.getProduct(p.getId());
-            if(q.isPresent()){
-                if (p.getName()!=null){
-                    q.get().setName(p.getName());
+    public Product update(Product product) {
+        if (product.getId() != null) {
+            Optional<Product> e = productRepository.getProduct(product.getId());
+            if (!e.isPresent()) {
+                if (product.getName() != null) {
+                    e.get().setName(product.getName());
                 }
-                if(p.getYear()!=null){
-                    q.get().setYear(p.getYear());
+                if (product.getBrand() != null) {
+                    e.get().setBrand(product.getBrand());
                 }
-                if(p.getCategory()!=null){
-                    q.get().setCategory(p.getCategory());
+                if (product.getYear() != null) {
+                    e.get().setYear(product.getYear());
                 }
-                productRepository.save(q.get());
-                return q.get();
-            }else{
-                return p;
+                if (product.getDescription() != null) {
+                    e.get().setDescription(product.getDescription());
+                }
+                if (product.getCategory() != null) {
+                    e.get().setCategory(product.getCategory());
+                }
+                productRepository.save(e.get());
+                return e.get();
+            } else {
+                return product;
             }
-
-        }else{
-            return p;
+        } else {
+            return product;
         }
-
-
     }
-    public boolean delete(int id){
-        boolean flag=false;
-        Optional<Product>p= productRepository.getProduct(id);
-        if(p.isPresent()){
-            productRepository.delete(p.get());
-            flag=true;
-    }
-        return flag;
+
+    public boolean deleteProduct(int productId) {
+        Boolean d = getProduct(productId).map(product -> {
+            productRepository.delete(product);
+            return true;
+        }).orElse(false);
+        return d;
     }
 }

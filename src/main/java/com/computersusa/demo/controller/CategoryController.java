@@ -8,25 +8,41 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
-
-
 @RestController
 @RequestMapping("/api/Category")
-
+@CrossOrigin(origins = "*")
 public class CategoryController {
 
     @Autowired
     private CategoryServices categoryServices;
-    @ResponseStatus(HttpStatus.CREATED)
+
     @GetMapping("/all")
-    public List<Category> getAll(){
+    public List<Category> getCategory() {
         return categoryServices.getAll();
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/save")
-    public Category save(@RequestBody Category a) {
-        return categoryServices.save(a);
+    @GetMapping("/{id}")
+    public Optional<Category> getCategory(@PathVariable("id") int categoryId) {
+        return categoryServices.getCategory(categoryId);
     }
+
+    @PostMapping("/save")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category save(@RequestBody Category category) {
+        return categoryServices.save(category);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category update(@RequestBody Category category) {
+        return categoryServices.update(category);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int categoryId) {
+        return categoryServices.deleteCategory(categoryId);
+    }
+
+
 }

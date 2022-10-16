@@ -13,20 +13,36 @@ import java.util.Optional;
 @RequestMapping("/api/Message")
 
 public class MessageController {
+
     @Autowired
     private MessageServices messageServices;
+
     @GetMapping("/all")
-    public List<Message> getMessageAll(){
-        return messageServices.getMessageAll();
+    public List<Message> getMessages() {
+        return messageServices.getAll();
     }
+
     @GetMapping("/{id}")
-    public Optional<Message> getMessageId(@PathVariable("id")Integer id){
-        return messageServices.getMessageId(id);
+    public Optional<Message> getMessage(@PathVariable("id") int messageId) {
+        return messageServices.getMessage(messageId);
     }
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save (@RequestBody Message message){
+    public Message save(@RequestBody Message message) {
         return messageServices.save(message);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody Message message) {
+        return messageServices.update(message);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int messageId) {
+        return messageServices.deleteMessage(messageId);
     }
 
 }

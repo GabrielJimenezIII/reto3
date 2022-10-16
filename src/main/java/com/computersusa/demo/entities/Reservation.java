@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name ="reservation")
-public class Reservation implements Serializable {
+public class Reservation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
@@ -18,7 +19,7 @@ public class Reservation implements Serializable {
     private String status="created";
 
     @ManyToOne
-    @JoinColumn(name ="productId")
+    @JoinColumn (name="productId")
     @JsonIgnoreProperties("reservations")
     private Product product;
 
@@ -27,9 +28,7 @@ public class Reservation implements Serializable {
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    @OneToOne(cascade = {CascadeType.REMOVE}, mappedBy= "reservation")
-    @JsonIgnoreProperties("reservation")
-    private Score score;
+    private String score;
 
     public Integer getIdReservation() {
         return idReservation;
@@ -63,14 +62,13 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
-    public Product getProduct() {
+    public Product getProduct(){
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct (Product product){
         this.product = product;
     }
-
     public Client getClient() {
         return client;
     }
@@ -79,13 +77,12 @@ public class Reservation implements Serializable {
         this.client = client;
     }
 
-    public Score getScore() {
+    public String getScore() {
         return score;
     }
 
-    public void setScore(Score score) {
+    public void setScore(String score) {
         this.score = score;
     }
-
 
 }

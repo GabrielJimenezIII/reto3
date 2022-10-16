@@ -8,16 +8,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="message")
-public class Message implements Serializable{
+public class Message {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer idMessage;
     private String messageText;
 
     @ManyToOne
     @JoinColumn(name="productId")
     @JsonIgnoreProperties({"messages","reservations"})
-    public Product product;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name="clientId")
@@ -40,14 +42,13 @@ public class Message implements Serializable{
         this.messageText = messageText;
     }
 
-    public Product getProduct() {
+    public Product getProduct(){
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(Product product){
         this.product = product;
     }
-
     public Client getClient() {
         return client;
     }
@@ -55,4 +56,7 @@ public class Message implements Serializable{
     public void setClient(Client client) {
         this.client = client;
     }
+
+
+
 }

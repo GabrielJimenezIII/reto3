@@ -13,9 +13,19 @@ public class ReservationRepository {
     @Autowired
     private ReservationCrudRepository reservationCrudRepository;
 
-    public List<Reservation> getAll(){return (List<Reservation>)reservationCrudRepository.findAll(); }
-    public Optional<Reservation> getReservationId(int id){return reservationCrudRepository.findById(id); }
-    public Reservation save(Reservation p){return reservationCrudRepository.save(p); }
-    public void delete(Reservation p){reservationCrudRepository.delete(p);}
+    public List<Reservation> getAll(){
+        return (List<Reservation>) reservationCrudRepository.findAll();
+    }
 
+    public Optional<Reservation> getReservation(int id){
+        return reservationCrudRepository.findById(id);
+    }
+
+    public Reservation save(Reservation reservation){
+        return reservationCrudRepository.save(reservation);
+    }
+
+    public void delete (Reservation reservation){
+        reservationCrudRepository.delete(reservation);
+    }
 }

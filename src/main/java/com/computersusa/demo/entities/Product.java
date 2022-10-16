@@ -8,30 +8,28 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="product")
-public class Product implements Serializable{
-
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String name;
     private String brand;
-
-    @Column(name ="years")
     private Integer year;
     private String description;
 
     @ManyToOne
-    @JoinColumn(name="categoryId")
+    @JoinColumn(name = "productId")
     @JsonIgnoreProperties("product")
     private Category category;
 
-    @OneToMany(cascade={CascadeType.PERSIST},mappedBy = "product")
-    @JsonIgnoreProperties({"product", "client"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "product")
+    @JsonIgnoreProperties({"product","client"})
     private List<Message> messages;
 
-    @OneToMany(cascade={CascadeType.PERSIST},mappedBy = "product")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "product")
     @JsonIgnoreProperties({"product","messages"})
-    private List<Reservation> reservations;
+    public List<Reservation> reservations;
 
     public Integer getId() {
         return id;
@@ -75,17 +73,18 @@ public class Product implements Serializable{
 
     public Category getCategory() {
         return category;
+
     }
 
-    public void setCategory(Category category) {
+    public void setCategory (Category category){
         this.category = category;
     }
 
-    public List<Message> getMessages() {
+    public List<Message> getMessages(){
         return messages;
     }
 
-    public void setMessages(List<Message> messages) {
+    public void setMessages(List<Message> messages){
         this.messages = messages;
     }
 
@@ -96,7 +95,5 @@ public class Product implements Serializable{
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
-
 
 }

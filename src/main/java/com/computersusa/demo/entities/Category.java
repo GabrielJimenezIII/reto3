@@ -1,25 +1,24 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-
-import java.io.Serializable;
-import java.util.List;
-
-
 import javax.persistence.*;
+import java.util.List;
+import java.io.Serializable;
 
 
 @Entity
-@Table(name="category")
-public class Category implements Serializable {
+@Table(name = "category")
+
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String name;
     private String description;
-    private List<Library> libs;
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
+    private List<Product> product;
 
     public Integer getId() {
         return id;
@@ -45,11 +44,11 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Library> getLibs() {
-        return libs;
+    public List<Product> getMotorbikes(){
+        return product;
     }
 
-    public void setLibs(List<Library> libs) {
-        this.libs = libs;
+    public void setMotorbikes(List<Product> motorbikes){
+        this.product= product;
     }
 }

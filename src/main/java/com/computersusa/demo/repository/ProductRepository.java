@@ -16,14 +16,16 @@ public class ProductRepository {
     public List<Product> getAll(){
         return (List<Product>) productCrudRepository.findAll();
     }
+
     public Optional<Product> getProduct(int id){
         return productCrudRepository.findById(id);
     }
-    public Product save(Product p){
-        return productCrudRepository.save(p);
-    }
-    public void delete(Product p){
-        productCrudRepository.delete(p);
+
+    public Product save(Product product){
+        return productCrudRepository.save(product);
     }
 
+    public void delete (Product product){
+        productCrudRepository.delete(product);
+    }
 }
