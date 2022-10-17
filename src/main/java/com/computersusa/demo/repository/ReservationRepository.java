@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+@ConditionalOnClass
 
 @Repository
 public class ReservationRepository {

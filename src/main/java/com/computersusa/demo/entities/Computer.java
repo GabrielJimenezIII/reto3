@@ -1,11 +1,14 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import java.util.List;
 import javax.persistence.*;
+import javax.persistence.Id;
 
+@ConditionalOnClass
 @Entity
-@Table(name="product")
-public class Product {
+@Table(name="computer")
+public class Computer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -16,16 +19,16 @@ public class Product {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "productId")
-    @JsonIgnoreProperties("product")
+    @JoinColumn(name = "computerId")
+    @JsonIgnoreProperties("computer")
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "product")
-    @JsonIgnoreProperties({"product","client"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
+    @JsonIgnoreProperties({"computer","client"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "product")
-    @JsonIgnoreProperties({"product","messages"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
+    @JsonIgnoreProperties({"computer","messages"})
     public List<Reservation> reservations;
 
     public Integer getId() {

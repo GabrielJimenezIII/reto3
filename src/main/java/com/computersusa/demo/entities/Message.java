@@ -1,11 +1,9 @@
 package com.computersusa.demo.entities;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.io.Serializable;
-
 import javax.persistence.*;
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+@ConditionalOnClass
 @Entity
 @Table(name="message")
 public class Message {
@@ -17,9 +15,9 @@ public class Message {
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name="productId")
+    @JoinColumn(name="computerId")
     @JsonIgnoreProperties({"messages","reservations"})
-    private Product product;
+    private Computer computer;
 
     @ManyToOne
     @JoinColumn(name="clientId")
@@ -42,12 +40,12 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public Product getProduct(){
-        return product;
+    public Computer getComputer(){
+        return computer;
     }
 
-    public void setProduct(Product product){
-        this.product = product;
+    public void setComputer(Computer computer){
+        this.computer = computer;
     }
     public Client getClient() {
         return client;

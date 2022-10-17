@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+@ConditionalOnClass
 @RestController
 @RequestMapping("/api/Reservation")
 

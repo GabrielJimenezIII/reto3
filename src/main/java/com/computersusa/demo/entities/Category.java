@@ -1,9 +1,11 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+
 import javax.persistence.*;
 import java.util.List;
-import java.io.Serializable;
 
+@ConditionalOnClass
 
 @Entity
 @Table(name = "category")
@@ -18,7 +20,7 @@ public class Category {
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
-    private List<Product> product;
+    private List<Computer> computer;
 
     public Integer getId() {
         return id;
@@ -44,11 +46,11 @@ public class Category {
         this.description = description;
     }
 
-    public List<Product> getMotorbikes(){
-        return product;
+    public List<Computer> getMotorbikes(){
+        return computer;
     }
 
-    public void setMotorbikes(List<Product> motorbikes){
-        this.product= product;
+    public void setMotorbikes(List<Computer> motorbikes){
+        this.computer = computer;
     }
 }

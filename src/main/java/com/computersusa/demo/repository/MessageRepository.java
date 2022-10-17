@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+@ConditionalOnClass
 @Repository
 public class MessageRepository {
     @Autowired

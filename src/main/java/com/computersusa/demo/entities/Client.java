@@ -1,9 +1,9 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
-
+@ConditionalOnClass
 @Entity
 @Table(name = "client")
 public class Client {
@@ -80,6 +80,4 @@ public class Client {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
-
 }

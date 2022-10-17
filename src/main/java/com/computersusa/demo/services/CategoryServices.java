@@ -5,7 +5,8 @@ import com.computersusa.demo.entities.Category;
 import com.computersusa.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+@ConditionalOnClass
 
 @Service
 public class CategoryServices {

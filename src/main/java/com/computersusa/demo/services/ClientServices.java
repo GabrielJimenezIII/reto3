@@ -1,15 +1,18 @@
 package com.computersusa.demo.services;
-
 import java.util.List;
 import java.util.Optional;
-
 import com.computersusa.demo.entities.Client;
 import com.computersusa.demo.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 
 
+
+
+@ConditionalOnClass
 @Service
+
 public class ClientServices {
 
     @Autowired
