@@ -1,10 +1,12 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 
 import javax.persistence.*;
 import java.io.Serializable;
 @ConditionalOnClass
+@SpringBootApplication
 @Entity
 @Table(name = "score")
 public class Score implements Serializable{

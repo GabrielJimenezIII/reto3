@@ -2,12 +2,13 @@ package com.computersusa.demo.repository;
 import com.computersusa.demo.entities.Category;
 import com.computersusa.demo.repository.crud.CategoryCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
-
+@SpringBootApplication
 @Repository
 public class CategoryRepository {
     @Autowired

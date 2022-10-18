@@ -4,11 +4,12 @@ import java.util.Optional;
 import com.computersusa.demo.entities.Client;
 import com.computersusa.demo.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 
 
-
+@SpringBootApplication
 
 @ConditionalOnClass
 @Service

@@ -1,10 +1,11 @@
 package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 
 import javax.persistence.*;
 import java.util.List;
-
+@SpringBootApplication
 @ConditionalOnClass
 
 @Entity

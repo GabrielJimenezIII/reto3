@@ -2,6 +2,7 @@ package com.computersusa.demo.controller;
 import com.computersusa.demo.entities.Reservation;
 import com.computersusa.demo.services.ReservationServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
+@SpringBootApplication
 @RestController
 @RequestMapping("/api/Reservation")
 

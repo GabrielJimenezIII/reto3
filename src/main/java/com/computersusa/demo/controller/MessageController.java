@@ -2,6 +2,7 @@ package com.computersusa.demo.controller;
 import com.computersusa.demo.entities.Message;
 import com.computersusa.demo.services.MessageServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +13,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
 @RestController
 @RequestMapping("/api/Message")
-
+@SpringBootApplication
 public class MessageController {
 
     @Autowired

@@ -4,10 +4,11 @@ import java.util.Optional;
 import com.computersusa.demo.entities.Category;
 import com.computersusa.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
-
+@SpringBootApplication
 @Service
 public class CategoryServices {
 

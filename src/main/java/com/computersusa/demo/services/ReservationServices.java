@@ -2,6 +2,7 @@ package com.computersusa.demo.services;
 import com.computersusa.demo.entities.Reservation;
 import com.computersusa.demo.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Optional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
 @Service
+@SpringBootApplication
 public class ReservationServices {
 
     @Autowired

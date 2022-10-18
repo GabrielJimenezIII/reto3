@@ -2,9 +2,11 @@ package com.computersusa.demo.entities;
 import java.util.Date;
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
 @Entity
+@SpringBootApplication
 @Table(name ="reservation")
 public class Reservation {
 

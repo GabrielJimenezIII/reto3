@@ -2,12 +2,15 @@ package com.computersusa.demo.repository;
 import com.computersusa.demo.entities.Computer;
 import com.computersusa.demo.repository.crud.ComputerCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
-
+@SpringBootApplication
+@EnableJpaRepositories
 @Repository
 public class ComputerRepository {
 

@@ -2,9 +2,12 @@ package com.computersusa.demo.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
 @Entity
+@SpringBootApplication
 @Table(name="message")
 public class Message {
 

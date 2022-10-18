@@ -3,6 +3,7 @@ package com.computersusa.demo.services;
 import com.computersusa.demo.entities.Computer;
 import com.computersusa.demo.repository.ComputerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
 
@@ -12,7 +13,7 @@ import java.util.Optional;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 @ConditionalOnClass
-
+@SpringBootApplication
 @Service
 public class ComputerServices {
 
